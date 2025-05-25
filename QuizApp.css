@@ -11,6 +11,9 @@ h1{
     font-size: 70px;
     text-align: center;
 }
+li{
+    list-style-type: none;
+}
 button{
     height: 20px;
     width: 80px;
