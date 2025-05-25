@@ -7,6 +7,10 @@
     width: 400px;
     padding: 20px;
 }
+h1{
+    font-size: 70px;
+    text-align: center;
+}
 button{
     height: 20px;
     width: 80px;
