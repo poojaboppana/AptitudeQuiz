@@ -1,0 +1,14 @@
+.quiz-container{
+    background-color: black;
+    color: aqua;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    width: 400px;
+    padding: 20px;
+}
+button{
+    height: 20px;
+    width: 80px;
+   background-color: chartreuse;
+}
