@@ -1,29 +1,10 @@
-const QuizData=[
-     {
-    question: "What is the capital of France?",
-    a: "London",
-    b: "Paris",
-    c: "Berlin",
-    d: "Madrid",
-    correct: "b"
-  },
-  {
-    question: "Which language runs in a web browser?",
-    a: "Java",
-    b: "C",
-    c: "Python",
-    d: "JavaScript",
-    correct: "d"
-  },
-  {
-    question: "What does CSS stand for?",
-    a: "Cascading Style Sheets",
-    b: "Creative Style System",
-    c: "Computer Style Sheet",
-    d: "Colorful Style Syntax",
-    correct: "a"
-  }
-];
+const quizUrls = {
+  numberSystem: "https://run.mocky.io/v3/89201e36-2eca-46ea-951b-3a449b997e35",
+  percentages: "https://run.mocky.io/v3/7b02d64c-4a1c-41e4-84b2-d8f8c86d197f",
+  profitLoss: "https://run.mocky.io/v3/7ad63aee-899a-4dd2-9cff-68afbbaf08dd",
+  trains: "https://run.mocky.io/v3/55353694-40bb-475c-bf6b-734d6a16650d"
+};
+
 const answersLst=document.querySelectorAll(".answer");
 const questionEl=document.getElementById("question");
 const a_text=document.getElementById("a_text");
@@ -72,4 +53,16 @@ submit.addEventListener("click", ()=>{
         }
     
 })
-loadQuiz();
+let quizData=[];
+function startQuiz(){
+  const subject=document.getElementById("subjectSelector").value;
+  const url= quizUrls[subject];
+  fetch(url).then(res=>res.json()).then(data=>{
+    QuizData= data;
+    currentQuest=0;
+    score=0;
+    loadQuiz();
+  }
+  ) .catch(err => alert("Failed to load quiz. Please try again."));
+
+}
