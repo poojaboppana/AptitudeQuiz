@@ -61,6 +61,10 @@ function startQuiz(){
     QuizData= data;
     currentQuest=0;
     score=0;
+    const quizcontainer=document.getElementById("quiz-container");
+    quizcontainer.style.display="block";
+    questionselection=document.getElementById("question-selection");
+    questionselection.style.display="none";
     loadQuiz();
   }
   ) .catch(err => alert("Failed to load quiz. Please try again."));

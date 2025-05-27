@@ -8,14 +8,17 @@
 </head>
 <body>
     <h1>Aptitude Quiz</h1>
+    <div id="question-selection">
     <select id="subjectSelector">
   <option value="numberSystem">Number System</option>
   <option value="percentages">Percentages</option>
   <option value="profitLoss">Profit & Loss</option>
   <option value="trains">Trains</option>
-</select>
+</select><br>
 <button onclick="startQuiz()">Start Quiz</button>
-    <div class="quiz-container">
+</div>
+
+    <div class="quiz-container" id="quiz-container" style="display: none;">
    <h2 id="question">Question Text</h2>
    <ul>
     <li><input type="radio" id="a" name="answer" class="answer"><label for="a" id="a_text"></label></li>
